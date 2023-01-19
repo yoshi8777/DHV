@@ -1,0 +1,234 @@
+MCQ
+set-a:      
+1.a         
+2.b
+3.a
+4.a
+5.a
+6.b
+7.a
+8.a
+9.a
+10.a
+11.a
+12.a
+13.c
+14.a
+15.b
+16.c
+17.c
+18.d
+19.d
+20.a
+
+
+
+
+
+
+set-b:
+1.b
+2.d
+3.a
+4.a
+5.b
+6.d
+7.a
+8.a
+9.a
+10.a
+11.a
+12.b
+13.d
+14.d
+15.b
+16.a
+17.a
+18.a
+19.b
+20.b
+
+
+Set A 1 question
+
+
+ONly sine plot
+
+
+from matplotlib import pyplot as plt
+import numpy as np
+import pandas as pd
+fig = plt.figure()
+ax = plt.axes()
+
+
+x = np.linspace(0, 10, 1000)
+ax.plot(x, np.sin(x))
+ax.set_title(' First Simple Plot graph')   
+ax.set_xlabel('x label values')          
+ax.set_ylabel('y label values');
+
+
+------------------------------------------------------------------------------------------------------------------
+
+
+multiple line plots SINE and COS
+
+
+fig = plt.figure()
+ax = plt.axes()
+
+
+x = np.linspace(0, 10, 1000)
+ax.plot(x, np.sin(x))
+ax.plot(x, np.cos(x))
+#ax.plot(x, np.tan(x))
+#ax.plot(x, np.cot(x))
+ax.set_title('Multiple Lines graph');
+ax.set_xlabel('x label')          
+ax.set_ylabel('y label')         
+plt.show()
+
+
+
+
+set A 2 question
+data = {'Apple': 10, 
+        'Orange': 15,
+        'Banana': 13,
+        'Pear': 9,
+        'Pomegrante': 11,
+        'Lemon': 5, 
+        'Lime': 20}
+names = list(data.keys())
+values = list(data.values())
+
+
+fig = plt.figure()
+ax = plt.axes()
+
+
+ax.barh(names, values, color='c', height=0.80) # Horizontal bar-chart
+ax.set_xlabel('Quantity')
+ax.set_ylabel('Fruit')
+ax.set_title('Fruit Quantities');
+ax.plot(x, np.sin(x), label = 'sin')
+ax.plot(x, np.cos(x), label = 'cos')
+ax.set_title('Multiple Lines');
+ax.set_xlabel('x label')          
+ax.set_ylabel('y label')
+ax.legend()
+# ax.legend(loc=1)           
+plt.show()
+
+
+
+
+
+
+set B 1 question
+
+
+labels = ['G1', 'G2', 'G3', 'G4', 'G5']
+men_means = [20, 34, 30, 35, 27]
+women_means = [25, 32, 34, 20, 25]
+
+
+x = np.arange(len(labels)) # the label locations
+width = 0.40 # the width of the bars
+
+
+fig, ax = plt.subplots()
+rects1 = ax.bar(x - width/2, men_means, width, label='Men')
+rects2 = ax.bar(x + width/2, women_means, width, label='Women')
+
+
+fig = plt.figure()
+ax = plt.axes()
+ax.plot(x, np.sin(x), label = 'sin')
+ax.plot(x, np.cos(x), label = 'cos')
+ax.set_title('Multiple Lines');
+ax.set_xlabel('x label')          
+ax.set_ylabel('y label')
+ax.legend()
+# ax.legend(loc=1)           
+plt.show
+
+
+
+
+
+
+set B 2 question
+
+
+sub question (1)
+
+
+# Notched boxplot with outliers
+spread = np.random.rand(50) * 100
+center = np.ones(25) * 50
+flier_high = np.random.rand(10) * 100 + 100
+flier_low = np.random.rand(10) * -100
+data = np.concatenate((spread, center, flier_high, flier_low))
+fig, ax = plt.subplots()
+ax.boxplot(data, 0, 'r^')
+ax.set_title('Boxplot with different symbol for outliers');
+
+
+----------------------------------------------------------------------------------------------------------------
+sub question (2)
+
+
+# Notched boxplot without outliers
+spread = np.random.rand(50) * 100
+center = np.ones(25) * 50
+flier_high = np.random.rand(10) * 100 + 100
+flier_low = np.random.rand(10) * -100
+data = np.concatenate((spread, center, flier_high, flier_low))
+fig, ax = plt.subplots()
+ax.boxplot(data, 1, '')
+ax.set_title('Notched Box Plot without Outliers');
+
+
+
+
+-----------------------------------------------------------------------------------------------------------
+sub question
+
+
+fig, axs=plt.subplots(2, 2, figsize=(10,10))
+x = np.linspace(0, 10, 100)
+axs[0,0].plot(x, np.sin(x), label = 'sin')
+axs[0,1].plot(x, np.cos(x), label = 'cos', linestyle = 'dotted',color = 'y')
+axs[1,0].plot(x, np.sin(x+2), label = 'sin(x+2)', linestyle = 'dashdot',color = 'g')
+axs[1,1].plot(x, np.sin(x+4), label = 'sin(x+4)', linestyle = 'dashed',color = 'k')
+
+
+fig.suptitle('Muliple subplots\
+from a all TM functions', fontsize=25)
+labels = ["sin","cos","sin(x+2)","sin(x+4)"]
+ax.set_title('Axis limits')
+ax.set_xlabel('x value')
+ax.set_ylabel('y value')
+fig.legend(axs[0,0],axs[0,1],axs[1,0],axs[1,1],labels=labels,loc="upper right")
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
